@@ -9,8 +9,8 @@ describe Blog::PostsController do
   end
 
   it "show action should render show template" do
-    @post = Factory(:post)#
-    #@post = Factory('Blog::Post')
+    #@post = Factory(:post)#
+    @post = Factory('Blog::Post')
     get :show, :id => @post.id
     response.should render_template(:show)
   end

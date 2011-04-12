@@ -1,6 +1,6 @@
 class Blog::PostsController < ApplicationController
   def index
-    @posts = Post.order("posted_at DESC").page(page_num).per(12)
+    @posts = Blog::Post.order("posted_at DESC").page(page_num).per(12)
     respond_to do |format|
       format.html
       format.rss { render :layout => false } #index.rss.builder
@@ -8,7 +8,7 @@ class Blog::PostsController < ApplicationController
   end
 
   def show
-    @post     = Post.find(params[:id])
+    @post     = Blog::Post.find(params[:id])
     @comment  = @post.blog_comments.build
   end
 

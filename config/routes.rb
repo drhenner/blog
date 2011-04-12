@@ -1,4 +1,14 @@
 RorBlog::Application.routes.draw do
+
+
+  namespace :blog do
+    resources :posts, :only => [:index, :show]
+
+    namespace :admin do
+      resources :posts#, :only => [:index, :show]
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

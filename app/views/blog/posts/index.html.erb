@@ -1,0 +1,24 @@
+<h1> Posts </h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Markdown</th>
+    <th>Posted At</th>
+    <th>User</th>
+    <th>State</th>
+  </tr>
+  <% for post in @posts %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.markdown %></td>
+      <td><%= post.posted_at %></td>
+      <td><%= post.user_id %></td>
+      <td><%= post.state %></td>
+      <td><%= link_to "Show", blog_post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
+

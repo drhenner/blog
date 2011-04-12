@@ -1,0 +1,30 @@
+<h1> Post </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+<p>
+  <strong>Markdown:</strong>
+  <%= @post.markdown %>
+</p>
+<p>
+  <strong>Posted At:</strong>
+  <%= @post.posted_at %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @post.user_id %>
+</p>
+<p>
+  <strong>State:</strong>
+  <%= @post.state %>
+</p>
+
+<p>
+  <%= link_to "View All", blog_posts_path, :class => 'button' %>
+</p>

@@ -8,12 +8,12 @@ gem 'rails', '3.0.6'
 gem 'cancan',       '~> 1.4.1'
 gem 'compass',      "~> 0.10.6"
 gem "jquery-rails"
+gem 'kaminari'
 gem 'mysql2'
 
 gem 'rails3-generators'
-gem 'rakismet'
-gem 'state_machine'
-gem 'will_paginate'
+gem 'rakismet', '~> 1.0.1'
+gem 'state_machine', '~> 0.10.3'
 gem 'yajl-ruby'
 
 # Use unicorn as the web server
@@ -52,6 +52,6 @@ group :development, :test do
     end
   gem "autotest-growl"
   gem 'email_spec'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 1.0.1'
   gem "nifty-generators", :git => 'git://github.com/drhenner/nifty-generators.git'
 end

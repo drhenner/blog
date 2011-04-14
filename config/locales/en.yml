@@ -3,3 +3,4 @@
 
 en:
   hello: "Hello world"
+  blog_purpose:  "This blog contains information we find interesting in the ruby community.  We write about Ruby, Rails and occasional rant."

@@ -1,0 +1,19 @@
+<% if @spam.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@spam.errors.count, "error") %> prohibited this spam from being saved:</h2>
+
+    <ul>
+    <% @spam.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="field">
+    <%= f.label :spam %><br />
+    <%= f.check_box :spam %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>

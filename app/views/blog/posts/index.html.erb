@@ -1,24 +1,54 @@
-<h1> Posts </h1>
+<% content_for :title do %>Blog Engine<% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Markdown</th>
-    <th>Posted At</th>
-    <th>User</th>
-    <th>State</th>
-  </tr>
-  <% for post in @posts %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= post.markdown %></td>
-      <td><%= post.posted_at %></td>
-      <td><%= post.user_id %></td>
-      <td><%= post.state %></td>
-      <td><%= link_to "Show", blog_post_path(post) %></td>
-    </tr>
+<% content_for :description do %> <% end %>
+
+<% if current_user && current_user.admin? %>
+  <% content_for :robots do %>
+    <meta name="robots" content="noarchive"/>
+    <meta name="robots" content="noindex, nofollow"/>
   <% end %>
-</table>
+<% end %>
 
+<% if @posts.count == 0 %>
+
+  <% if current_user && current_user.admin? %>
+    <div class="post">
+      <h2>Crack those knuckles - lets get to work!</h2>
+      <p class="meta">
+        Write your first post using the
+        <%= link_to "Create Post",  new_blog_admin_post_path %> option above.
+      </p>
+    </div>
+  <% else %>
+    <div class="post">
+      <h2>Welcome to RoR-e's Blog!</h2>
+      <p class="meta">Seriously, get ready for some serious blogging!</p>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <% for post in @posts %>
+    <div class="post">
+      <h2><%= link_to post.title, post %>
+      <span class="nobreak">
+        <span class="author"><%= post.author %></span>
+        <span class="date"><%= post.posted_at.strftime("%b %d") %></span>
+      </span>
+      </h2>
+
+      <p class="meta">
+        <%= render :partial => "meta", :locals => { :post => post } %>
+      </p>
+
+      <div class="entry">
+        <%= post.content.html_safe %>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>
+
+<% content_for :sidebar do %>
+<%= render :partial => "shared/sidebar" %>
+<% end %>

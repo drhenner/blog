@@ -1,0 +1,8 @@
+<h1> Edit Post </h1>
+
+<%= form_for(@post, :url => blog_admin_post_path(@post)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'Show', blog_admin_post_path( @post ), :class => 'button' %> |
+  <%= link_to 'View All', blog_admin_posts_path, :class => 'button' %>

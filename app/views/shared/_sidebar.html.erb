@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <div class="block-content" id="intro">
+    <%= link_to image_tag( 'logo-e.png', :style => 'width: 270px;'), root_path %>
+    <h2><%= link_to "#{site_name} blog.", blog_posts_path %></h2>
+    <p><%= site_name %>. <%= t(:blog_purpose) %> </p>
+  </div>
+
+  <div class="block-content"  >
+    <%= render :partial => '/shared/side_menu' %>
+  </div>
+</div><!--sidebar-->

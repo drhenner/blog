@@ -1,0 +1,17 @@
+<h1> Spam </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @spam.title %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @spam.email %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_blog_spam_path(@spam), :class => 'button' %> |
+  <%= link_to "Destroy", blog_spam_path(@spam), :confirm => 'Are you sure?', :method => :delete, :class => 'button' %> |
+  <%= link_to "View All", blog_spams_path, :class => 'button' %>
+</p>

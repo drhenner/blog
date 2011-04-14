@@ -1,0 +1,15 @@
+<h1> Spams </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for spam in @spams %>
+    <tr>
+      <td><%= spam.name %></td>
+      <td><%= link_to "Show", blog_spam_path(spam) %></td>
+      <td><%= link_to "Edit", edit_blog_spam_path(spam) %></td>
+      <td><%= link_to "Destroy", blog_spam_path(spam), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

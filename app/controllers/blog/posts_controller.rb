@@ -1,4 +1,6 @@
 class Blog::PostsController < ApplicationController
+  layout 'blog'
+
   def index
     @posts = Blog::Post.order("posted_at DESC").page(page_num).per(12)
     respond_to do |format|

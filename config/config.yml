@@ -1,0 +1,12 @@
+
+development: &non_production_settings
+  mailer:
+    server: mail.example.com
+    username: bubba
+    password: s0meth1ngs3cr3t
+  google_analytics_account_name: yourGaAccountnum
+  your_domain_name:          http://www.ror-e.com
+  your_site_name:          ror-e.com
+
+test:
+  <<: *non_production_settings

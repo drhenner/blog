@@ -1,0 +1,12 @@
+<h1> Post </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_blog_admin_post_path(@post), :class => 'button' %> |
+  <%= link_to "Destroy", blog_admin_post_path(@post), :confirm => 'Are you sure?', :method => :delete, :class => 'button' %> |
+  <%= link_to "View All", blog_admin_posts_path, :class => 'button' %>
+</p>

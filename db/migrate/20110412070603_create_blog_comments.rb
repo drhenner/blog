@@ -11,6 +11,7 @@ class CreateBlogComments < ActiveRecord::Migration
       t.string :user_agent
       t.string :referrer
       t.boolean :admin
+      t.boolean :spam, :default => false
 
       t.timestamps
     end

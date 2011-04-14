@@ -1,0 +1,8 @@
+<h1> Edit Spam </h1>
+
+<%= form_for(@spam, :url => blog_spam_path(@spam)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'Show', blog_spam_path( @spam ), :class => 'button' %> |
+  <%= link_to 'View All', blog_spams_path, :class => 'button' %>

@@ -1,8 +1,9 @@
 RorBlog::Application.routes.draw do
 
-
+  root :to => "blog/posts#index"
   namespace :blog do
     resources :posts, :only => [:index, :show]
+    resources :spams#, :only => [:index, :show]
 
     namespace :admin do
       resources :posts#, :only => [:index, :show]

@@ -7,5 +7,5 @@ Factory.define 'Blog::Post' do |f|
   f.markdown    "MyText"
   f.posted_at   "2011-04-11 23:41:40"
   f.user_id     1
-  f.state       "MyString"
+  f.state       "draft"
 end

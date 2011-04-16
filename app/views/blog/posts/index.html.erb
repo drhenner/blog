@@ -32,8 +32,8 @@
     <div class="post">
       <h2><%= link_to post.title, post %>
       <span class="nobreak">
-        <span class="author"><%= post.author %></span>
-        <span class="date"><%= post.posted_at.strftime("%b %d") %></span>
+        <span class="author"><%= post.user_id ? post.user.blog_name : current_user.blog_name %></span>
+        <span class="date"><%= post.display_posted_at %></span>
       </span>
       </h2>
 

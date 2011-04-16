@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20110412070603) do
 
   create_table "blog_comments", :force => true do |t|
     t.string   "title"
+    t.string   "name"
     t.string   "email"
     t.string   "website"
     t.integer  "post_id"

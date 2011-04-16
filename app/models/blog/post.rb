@@ -29,5 +29,14 @@ module Blog
         #transition :from => :inactive,    :to => :active
       end
     end
+
+    def display_posted_at
+      posted_at ? posted_at.strftime("%b %d") : 'unknown'
+    end
+
+    def commentable?
+      !closed?
+    end
+
   end
 end

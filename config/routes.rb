@@ -2,7 +2,10 @@ RorBlog::Application.routes.draw do
 
   root :to => "blog/posts#index"
   namespace :blog do
-    resources :posts, :only => [:index, :show]
+    resources :posts, :only => [:index, :show] do
+      resources :blog_comments
+    end
+
     resources :spams#, :only => [:index, :show]
 
     namespace :admin do

@@ -2,6 +2,7 @@ class CreateBlogComments < ActiveRecord::Migration
   def self.up
     create_table :blog_comments do |t|
       t.string :title
+      t.string :name
       t.string :email
       t.string :website
       t.integer :post_id

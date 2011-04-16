@@ -1,0 +1,6 @@
+<% if post.blog_comments.size == 0 %>
+  <%= link_to "Post a comment", blog_post_path(post, :anchor => "comments") %>
+<% else %>
+  <%= link_to pluralize(post.blog_comments.size, "comment"), blog_post_path(post, :anchor => "comments") %>
+  Latest by <%= post.blog_comments.last.name %>
+<% end %>

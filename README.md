@@ -1,9 +1,10 @@
+# Blog Engine - overview
 
 The first thing you will need to have in your current app is a user class that responds to the following methods.
 
 class User
 
-  def admin?
+  def blog_admin?
     true
   end
 

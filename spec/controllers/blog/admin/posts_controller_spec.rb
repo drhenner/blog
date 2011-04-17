@@ -3,6 +3,11 @@ require  'spec_helper'
 describe Blog::Admin::PostsController do
   render_views
 
+  before(:each) do
+    #current_user = mock('user')
+    #current_user.stubs(:blog_admin?).returns(true)
+  end
+
   it "index action should render index template" do
     get :index
     response.should render_template(:index)

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   class User
 
-    def admin?
+    def blog_admin?
       true
     end
 

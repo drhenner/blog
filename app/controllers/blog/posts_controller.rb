@@ -10,7 +10,7 @@ class Blog::PostsController < ApplicationController
   end
 
   def show
-    @post     = Blog::Post.find(params[:id])
+    @post     = Blog::Post.includes(:blog_comments).find(params[:id])
     @comment  = Blog::BlogComment.new
   end
 

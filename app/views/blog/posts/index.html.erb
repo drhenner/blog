@@ -2,7 +2,7 @@
 
 <% content_for :description do %> <% end %>
 
-<% if current_user && current_user.admin? %>
+<% if current_user && current_user.blog_admin? %>
   <% content_for :robots do %>
     <meta name="robots" content="noarchive"/>
     <meta name="robots" content="noindex, nofollow"/>
@@ -11,7 +11,7 @@
 
 <% if @posts.count == 0 %>
 
-  <% if current_user && current_user.admin? %>
+  <% if current_user && current_user.blog_admin? %>
     <div class="post">
       <h2>Crack those knuckles - lets get to work!</h2>
       <p class="meta">

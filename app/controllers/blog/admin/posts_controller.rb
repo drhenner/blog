@@ -1,4 +1,5 @@
 class Blog::Admin::PostsController < ApplicationController
+  before_filter :ensure_blog_admin
   layout 'blog'
 
   def index
@@ -16,6 +17,8 @@ class Blog::Admin::PostsController < ApplicationController
 
   def create
     @post = Blog::Post.new(params['Blog::Post'])
+#    @post.user = current_user
+    @post.posted_at = Time.zone.now
     @post.state = 'draft' if params[:save_draft].present?
 
     if @post.save
@@ -51,6 +54,10 @@ class Blog::Admin::PostsController < ApplicationController
   end
 
   private
+
+  def ensure_blog_admin
+    redirect_to blog_posts_path and return if !current_user || !current_user.blog_admin?
+  end
 
   def form_info
 

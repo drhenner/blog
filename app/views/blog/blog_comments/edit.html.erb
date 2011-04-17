@@ -1,0 +1,7 @@
+<h1> Edit Blog Comment </h1>
+
+<%= form_for(@blog_comment, :url => blog_post_blog_comment_path(@post, @blog_comment)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'View All', blog_post_blog_comments_path, :class => 'button' %>

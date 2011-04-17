@@ -8,26 +8,27 @@ jQuery(document).ready(function($) {
 
       $("#new_comment_canvas input[type=text], #new_comment_canvas textarea").focus(function() {
         var defaultText = $(this).val();
-        if(defaultText === "Name" || defaultText === "Email"|| defaultText === "Website" || defaultText === commentDefaultText) {
+        if(defaultText === "Name" || defaultText === "Email"|| defaultText === "Website" || defaultText === BlogEngine.Blog.commentDefaultText) {
           $(this).select();
         }
       });
 
       //Don't submit comment or preview comment when no comment is given
       $("#new_comment_canvas input[type=submit]").live('click', function (event) {
-        if($("#comment_content").val() === "" || $("#comment_content").length === 0 || $("#comment_content").val() === commentDefaultText) {
+        if($("#blog_blog_comment_content").val() === "" || $("#blog_blog_comment_content").length === 0 || $("#blog_blog_comment_content").val() === BlogEngine.Blog.commentDefaultText) {
           event.preventDefault();
           return false;
         }
       });
 
       //Preview a comment
+
       $("#preview_comment_link").live('click', function (event) {
-        if($("#comment_content").val() === "" || $("#comment_content").length === 0 || $("#comment_content").val() === commentDefaultText) {
+        if($("#blog_blog_comment_content").val() === "" || $("#blog_blog_comment_content").length === 0 || $("#blog_blog_comment_content").val() === BlogEngine.Blog.commentDefaultText) {
           event.preventDefault();
           return false;
         } else {
-          $.post($(this).attr('href'), $("#new_comment").serialize(), null, "script");
+          $.post($(this).attr('href'), $("#new_blog_blog_comment").serialize(), null, "script");
           event.preventDefault();
           return false;
         }

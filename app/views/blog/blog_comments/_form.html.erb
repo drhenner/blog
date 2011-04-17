@@ -1,0 +1,63 @@
+<% if @blog_comment.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@blog_comment.errors.count, "error") %> prohibited this blog_comment from being saved:</h2>
+
+    <ul>
+    <% @blog_comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :post_id %><br />
+    <%= f.text_field :post_id %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </div>
+  <div class="field">
+    <%= f.label :user_ip %><br />
+    <%= f.text_field :user_ip %>
+  </div>
+  <div class="field">
+    <%= f.label :user_agent %><br />
+    <%= f.text_field :user_agent %>
+  </div>
+  <div class="field">
+    <%= f.label :referrer %><br />
+    <%= f.text_field :referrer %>
+  </div>
+  <div class="field">
+    <%= f.label :admin %><br />
+    <%= f.check_box :admin %>
+  </div>
+  <div class="field">
+    <%= f.label :spam %><br />
+    <%= f.check_box :spam %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>

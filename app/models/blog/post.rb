@@ -1,6 +1,6 @@
 module Blog
   class Post < ActiveRecord::Base
-    # belongs_to :user
+    belongs_to :user
     has_many :blog_comments, :class_name => 'Blog::BlogComment'
     validate :title,  :presence => true
     validate :content,  :presence => true

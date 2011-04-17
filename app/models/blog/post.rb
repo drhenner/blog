@@ -9,6 +9,8 @@ module Blog
 
     validate :state,  :presence => true
 
+    before_save :create_content
+
     state_machine :state, :initial => :draft do
       state :draft
       state :closed
@@ -36,6 +38,12 @@ module Blog
 
     def commentable?
       !closed?
+    end
+
+    private
+
+    def create_content
+      self.content = BlueCloth.new(self.markdown).to_html unless self.markdown.blank?
     end
 
   end

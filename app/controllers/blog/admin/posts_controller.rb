@@ -34,7 +34,7 @@ class Blog::Admin::PostsController < ApplicationController
 
   def update
     @post = Blog::Post.find(params[:id])
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(params["Blog::Post"])
       flash[:notice] = "Successfully updated post."
       redirect_to blog_admin_post_url(@post)
     else

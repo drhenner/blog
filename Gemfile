@@ -5,6 +5,7 @@ gem 'rails', '3.0.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'bluecloth'
 gem 'cancan',       '~> 1.4.1'
 gem 'compass',      "~> 0.10.6"
 gem "jquery-rails"

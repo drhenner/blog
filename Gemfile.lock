@@ -43,6 +43,7 @@ GEM
       sys-uname
     autotest-growl (0.2.9)
     autotest-rails-pure (4.1.2)
+    bluecloth (2.1.0)
     builder (2.1.2)
     cancan (1.4.1)
     columnize (0.3.2)
@@ -139,6 +140,7 @@ DEPENDENCIES
   autotest-fsevent
   autotest-growl
   autotest-rails-pure
+  bluecloth
   cancan (~> 1.4.1)
   compass (~> 0.10.6)
   email_spec

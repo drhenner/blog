@@ -11,7 +11,7 @@ class Blog::PostsController < ApplicationController
 
   def show
     @post     = Blog::Post.find(params[:id])
-    @comment  = @post.blog_comments.build
+    @comment  = Blog::BlogComment.new
   end
 
   private

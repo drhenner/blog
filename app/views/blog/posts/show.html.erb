@@ -162,7 +162,7 @@
               <%= link_to "Preview",
                             preview_post_blog_comments_path(@post),
                             :id => "preview_comment_link",
-                            :rel => "nofollow" %>
+                            :rel => "nofollow" % >
           -->
           -%>
         </div>
@@ -173,7 +173,9 @@
       <div id="comment_preview"></div>
 
       <div class="form-submit">
-        <%= f.submit "Post comment", :disable_with => "Post comment", :id => "comment_submit_preview" %> <span>or</span> <a id="edit_comment_link" href="#">Edit</a>
+        <%= f.submit "Post comment",
+                      :disable_with => "Post comment",
+                      :id => "comment_submit_preview" %> <span>or</span> <a id="edit_comment_link" href="#">Edit</a>
       </div>
     </div><!--comment_preview_canvas-->
     <% end %>

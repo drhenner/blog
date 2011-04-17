@@ -5,7 +5,7 @@ Factory.define 'Blog::BlogComment' do |f|
   f.title       "My Blog Title"
   f.email       "drhenner@yahoo.com"
   f.website     "MyString"
-  f.post_id     1
+  f.post        { |c| c.association('Blog::Post') }
   f.content     "MyText"
   f.permalink   "MyString"
   f.user_ip     "192.168.0.1"

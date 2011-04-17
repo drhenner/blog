@@ -2,7 +2,7 @@ class Blog::PostsController < ApplicationController
   layout 'blog'
 
   def index
-    @posts = Blog::Post.order("posted_at DESC").page(page_num).per(12)
+    @posts = Blog::Post.visible.order("posted_at DESC").page(page_num).per(12)
     respond_to do |format|
       format.html
       format.rss { render :layout => false } #index.rss.builder
@@ -10,7 +10,7 @@ class Blog::PostsController < ApplicationController
   end
 
   def show
-    @post     = Blog::Post.includes(:blog_comments).find(params[:id])
+    @post     = Blog::Post.visible.includes(:blog_comments).find(params[:id])
     @comment  = Blog::BlogComment.new
   end
 

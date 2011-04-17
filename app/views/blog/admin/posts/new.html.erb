@@ -20,7 +20,7 @@
 
 <div class="post">
   <h2>
-    <a href="#" class="article">Title me wisely brave citizen</a>
+    <a href="#" class="article">Title me wisely</a>
     <span class="nobreak">
       <span class="author"><%= current_user.blog_name %></span>
       <span class="date"><%= Time.now.strftime("%b %d") %></span>
@@ -38,7 +38,7 @@
     <%= form_for(@post, :url => blog_admin_posts_path(), :as => 'Blog::Post') do |f| %>
       <div id="title-container">
         <%= f.text_field :title %>
-        <p>/1234-title-me-wisely-brave-citizen</p>
+        <p>/1234-title-me-wisely</p>
       </div>
 
       <div id="wmd-container">

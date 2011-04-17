@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <th>Title</th><th>Email</th>
+    <th>Title</th><th>Posted at</th><th>State</th>
   </tr>
   <% for post in @posts %>
     <tr>
-      <td><%= post.title %></td><td><%= post.email %></td>
+      <td><%= post.title %></td><td><%= post.posted_at %></td><td><%= post.state %></td>
       <td><%= link_to "Show", blog_admin_post_path(post) %></td>
       <td><%= link_to "Edit", edit_blog_admin_post_path(post) %></td>
       <td><%= link_to "Destroy", blog_admin_post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>

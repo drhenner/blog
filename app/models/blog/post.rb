@@ -1,13 +1,15 @@
 module Blog
   class Post < ActiveRecord::Base
     belongs_to :user
-    has_many :blog_comments, :class_name => 'Blog::BlogComment'
-    validate :title,  :presence => true
-    validate :content,  :presence => true
-    validate :markdown,  :presence => true
-    validate :user_id,  :presence => true
+    has_many :blog_comments, :class_name => 'Blog::BlogComment', :conditions => ['spam = ?', false]
+    has_many :all_blog_comments, :class_name => 'Blog::BlogComment'
 
-    validate :state,  :presence => true
+    validates :title,  :presence => true
+    validates :content,  :presence => true
+    validates :markdown,  :presence => true
+    #validates :user_id,  :presence => true
+
+    validates :state,  :presence => true
 
     before_save :create_content
 
@@ -38,6 +40,10 @@ module Blog
 
     def commentable?
       !closed?
+    end
+
+    def self.visible
+      where(['posts.state != ?', 'draft'])
     end
 
     private

@@ -56,9 +56,21 @@
       </div><!--wmd-container-->
 
       <ul class="options form-submit">
-        <li class="right">
+        <li class="left">
           <%= f.submit "Update post", :confirm => "Are you sure you want to update this post" %>
         </li>
+        <% if @post.draft? %>
+          <li class="right">
+            <%= f.submit "Update and activate post", :id => "activate_submit", :confirm => "Are you sure you want to update this post" %>
+          </li>
+        <% elsif @post.active? %>
+          <li class="right">
+            <%= f.submit "Update & draft post", :id => "draft_submit" %>
+          </li>
+          <li class="right">
+            <%= f.submit "Update and close post", :id => "close_submit", :confirm => "Are you sure you want to update this post" %>
+          </li>
+        <% end %>
       </ul>
     <% end %>
   </div><!--sidebar-->

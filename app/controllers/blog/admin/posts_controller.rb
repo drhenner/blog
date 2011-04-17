@@ -37,6 +37,11 @@ class Blog::Admin::PostsController < ApplicationController
 
   def update
     @post = Blog::Post.find(params[:id])
+
+    @post.state = 'draft' if params[:draft_submit].present?
+    @post.state = 'active' if params[:activate_submit].present?
+    @post.state = 'closed' if params[:close_submit].present?
+
     if @post.update_attributes(params["Blog::Post"])
       flash[:notice] = "Successfully updated post."
       redirect_to blog_admin_post_url(@post)
